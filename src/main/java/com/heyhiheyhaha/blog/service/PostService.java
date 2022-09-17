@@ -10,4 +10,7 @@ import javax.transaction.Transactional;
 @RequiredArgsConstructor
 public class PostService {
 
+    private final PostRepository postRepository;
+
+
 }
