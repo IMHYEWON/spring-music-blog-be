@@ -1,6 +1,7 @@
 package com.heyhiheyhaha.blog.repository;
 
 import com.heyhiheyhaha.blog.domain.Post;
+import org.springframework.stereotype.Repository;
 import org.springframework.util.StringUtils;
 
 import javax.persistence.EntityManager;
@@ -12,6 +13,7 @@ import javax.persistence.criteria.Root;
 import java.util.ArrayList;
 import java.util.List;
 
+@Repository
 public class PostRepository {
 
     private final EntityManager em;
