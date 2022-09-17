@@ -1,11 +1,13 @@
 package com.heyhiheyhaha.blog.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import lombok.Getter;
+
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
+@Getter
 public class User {
 
     @Id @GeneratedValue
@@ -13,4 +15,7 @@ public class User {
     private Long Id;
 
     private String name;
+
+    @OneToMany
+    private List<Post> posts = new ArrayList<>();
 }
