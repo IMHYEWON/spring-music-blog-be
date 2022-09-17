@@ -51,13 +51,14 @@ public class Post {
 
     //==생성관계 메서드==//
     @Builder(builderMethodName = "createBuilder")
-    public Post(User user, String title, String content, PostMusic... postMusics) {
+    public Post(User user, String title, String content, PostMusic postMusic) {
         setUser(user);
         this.title = title;
         this.content = content;
-        for (PostMusic postMusic : postMusics) {
+        addPostMusic(postMusic);
+/*        for (PostMusic postMusic : postMusics) {
             addPostMusic(postMusic);
-        }
+        }*/
         this.type = PostType.MUSIC;
         this.postDate = LocalDateTime.now();
     }
