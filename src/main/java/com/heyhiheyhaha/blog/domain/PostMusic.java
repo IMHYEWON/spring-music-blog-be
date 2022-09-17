@@ -13,6 +13,9 @@ public class PostMusic {
     @JoinColumn(name="music_id")
     private Music music;
 
+    @ManyToOne
+    @JoinColumn(name = "post_id")
+    private Post post;
     public void setPostMusic(Post post) {
     }
 }

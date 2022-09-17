@@ -11,6 +11,7 @@ import static javax.persistence.FetchType.LAZY;
 
 @Entity
 @Getter
+@AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Builder
 public class Post {
@@ -32,8 +33,8 @@ public class Post {
     @Enumerated(EnumType.STRING)
     private PostType type;
 
-    @OneToMany
-    private List<PostMusic> PostMusics = new ArrayList<>();
+    @OneToMany(mappedBy = "post", cascade = CascadeType.ALL)
+    private List<PostMusic> postMusics = new ArrayList<>();
 
     private LocalDateTime postDate;
 
@@ -44,7 +45,7 @@ public class Post {
     }
 
     public void addPostMusic(PostMusic postMusic) {
-        PostMusics.add(postMusic);
+        postMusics.add(postMusic);
         postMusic.setPostMusic(this); //애매함
     }
 
